@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LOOP — 1 Plastic Life (QA gateway prototype)</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root {
+      --bg: #0f1c14;
+      --card: #1a2e22;
+      --text: #f4f7f5;
+      --muted: #a8b5ad;
+      --accent: #3d8b5e;
+      --accent2: #c4a35a;
+      --danger: #b85c38;
+      --radius: 14px;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: var(--font);
+      background: radial-gradient(1200px 600px at 20% -10%, #1e3d2a 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    main {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--accent2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 1.55rem;
+      margin: 14px 0 6px;
+      font-weight: 750;
+    }
+    .sub { color: var(--muted); font-size: 0.95rem; margin: 0 0 22px; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    a.btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      background: var(--accent);
+      padding: 14px 16px;
+      border-radius: 12px;
+      font-weight: 650;
+      font-size: 1rem;
+    }
+    a.btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    a.btn.apply {
+      background: var(--accent2);
+      color: #1a1408;
+    }
+    .note {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .note code { color: #d7e0db; font-size: 0.75rem; }
+    .warn {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: #e6c7b8;
+      border-left: 3px solid var(--danger);
+      padding-left: 10px;
+    }
+    footer {
+      margin-top: 28px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="badge">QA prototype · not live DNS</span>
+    <h1>LOOP</h1>
+    <p class="sub">1 Plastic Life operations — branded entry (prototype). Choose where to go.</p>
+
+    <div class="card">
+      <a class="btn" href="https://script.google.com/macros/s/AKfycbybnSTiCkJiTOrSQyAT2QDKpeUJPqtY1wdgIAk9nunFCS0eS3gy5Q-Ah582FqtDQnCw9A/exec?view=open" target="_blank" rel="noopener">
+        Supervisor / Ops (QA)
+      </a>
+      <a class="btn secondary" href="https://script.google.com/macros/s/AKfycbybnSTiCkJiTOrSQyAT2QDKpeUJPqtY1wdgIAk9nunFCS0eS3gy5Q-Ah582FqtDQnCw9A/exec?view=profile" target="_blank" rel="noopener">
+        Profile (QA)
+      </a>
+      <a class="btn apply" href="https://script.google.com/macros/s/AKfycbzbHiSf0paceH7Rdgt2Fe05joeS_8nn63sLT7HYFdPkWV88ZIE3BXT2tIFUeE112nJ69Q/exec?view=apply" target="_blank" rel="noopener">
+        Apply / Partner
+      </a>
+      <a class="btn secondary" href="https://www.1plasticlife.org/business.html" target="_blank" rel="noopener">
+        Public site · Business
+      </a>
+    </div>
+
+    <p class="note">
+      Supervisor uses Eng-confirmed <code>view=open</code> (2026-09-25) on QA webapp
+      <code>…FqtDQnCw9A</code> (@1502). Apply uses Production <code>…UeE112nJ69Q</code> (@1500)
+      <code>view=apply</code>. Campaign UTMs are added by Weebly helper v3 when you arrive from a tracked landing page — not baked into this static button.
+    </p>
+    <p class="warn">
+      Do not use <code>view=home</code> for Home/tasks. Staff Sign-In / legacy deploys / Prod Apply are not the calendar “OPEN IN LOOP” supervisor surface.
+      After you click, Google may still show <code>script.google.com</code> during the session — expected until a later SPA+API phase.
+    </p>
+    <footer>1 Plastic Life · LOOP Web Integration · local prototype only</footer>
+  </main>
+</body>
+</html>
