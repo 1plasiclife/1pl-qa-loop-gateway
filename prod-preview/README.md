@@ -6,5 +6,5 @@ Proposed eventual host: `https://loop.1plasticlife.org/` (held until Eng ops REA
 
 Live preview (after Pages publish): `https://1plasiclife.github.io/1pl-prod-loop-gateway/`
 
-Deep links: Prod @1525 `…UeE112nJ69Q` — `view=open` | `view=workstation_qr` | `view=profile` | `view=partner_service` | `view=apply`
+Deep links: Prod @1528 `…UeE112nJ69Q` — `view=open` | `view=workstation_qr` | `view=profile` | `view=partner_service` | `view=apply`
 QA pin: @1511 `…FqtDQnCw9A` (label only — public buttons stay on the Production exec)
