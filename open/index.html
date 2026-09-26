@@ -25,20 +25,26 @@
   var PROD = 'https://script.google.com/macros/s/AKfycbzbHiSf0paceH7Rdgt2Fe05joeS_8nn63sLT7HYFdPkWV88ZIE3BXT2tIFUeE112nJ69Q/exec';
   var q = new URLSearchParams(location.search);
   var task = String(q.get('task') || '').trim().toUpperCase();
+  var loopKey = String(q.get('loopKey') || '').trim();
   var env = String(q.get('env') || 'qa').toLowerCase();
   var base = (env === 'prod' || env === 'production') ? PROD : QA;
+  var envName = base === PROD ? 'Production' : 'QA';
   var status = document.getElementById('status');
   var fallback = document.getElementById('fallback');
-  if (!/^TSK-\d+$/.test(task)) {
-    status.textContent = 'Add a LOOP task id: ?task=TSK-1234 (optional &env=qa|prod).';
-    fallback.href = base + '?view=open&skip_canonical_redirect=1';
-    fallback.textContent = 'Open LOOP Tasks (no task id)';
+  var url = base + '?view=open&skip_canonical_redirect=1&loop_resume=1';
+  if (/^TSK-\d+$/.test(task)) {
+    url += '&task=' + encodeURIComponent(task);
+  }
+  if (loopKey) url += '&loopKey=' + encodeURIComponent(loopKey);
+  if (!/^TSK-\d+$/.test(task) && !loopKey) {
+    status.textContent = 'Add ?task=TSK-1234 or ?loopKey=task:TSK-1234 (optional &env=qa|prod).';
+    fallback.href = url;
+    fallback.textContent = 'Open LOOP (no task id)';
     return;
   }
-  var url = base + '?view=open&task=' + encodeURIComponent(task) + '&skip_canonical_redirect=1';
   fallback.href = url;
   fallback.textContent = url;
-  status.textContent = 'Opening ' + task + ' on ' + (base === PROD ? 'Production' : 'QA') + '…';
+  status.textContent = 'Opening ' + (/^TSK-\d+$/.test(task) ? task : 'loop key') + ' on ' + envName + '…';
   location.replace(url);
 })();
   </script>
